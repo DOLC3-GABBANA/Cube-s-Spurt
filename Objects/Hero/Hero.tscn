@@ -1,0 +1,89 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Objects/Hero/Hero.gd" type="Script" id=1]
+[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://Objects/Hero/states/standard.gd" type="Script" id=3]
+[ext_resource path="res://Objects/Hero/states/left_right.gd" type="Script" id=4]
+[ext_resource path="res://Objects/Hero/states/flappy.gd" type="Script" id=5]
+[ext_resource path="res://gfx/bullet.png" type="Texture" id=6]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 28, 28 )
+
+[sub_resource type="ParticlesMaterial" id=2]
+emission_shape = 1
+emission_sphere_radius = 20.0
+flag_disable_z = true
+spread = 180.0
+gravity = Vector3( 0, 98, 0 )
+initial_velocity = 200.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale = 1.5
+
+[node name="Hero" type="KinematicBody2D" groups=["hero"]]
+script = ExtResource( 1 )
+
+[node name="icon" type="Sprite" parent="."]
+position = Vector2( -1.90735e-06, 2.86102e-06 )
+scale = Vector2( 0.875, 0.875 )
+texture = ExtResource( 2 )
+
+[node name="collision" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="Rays" type="Node2D" parent="."]
+
+[node name="RayRight" type="RayCast2D" parent="Rays"]
+position = Vector2( 24, 24 )
+enabled = true
+cast_to = Vector2( 8, 0 )
+
+[node name="RayRight2" type="RayCast2D" parent="Rays"]
+position = Vector2( 24, -24 )
+enabled = true
+cast_to = Vector2( 8, -8 )
+
+[node name="RayLeft" type="RayCast2D" parent="Rays"]
+position = Vector2( -24, 24 )
+enabled = true
+cast_to = Vector2( -8, 0 )
+
+[node name="RayLeft2" type="RayCast2D" parent="Rays"]
+position = Vector2( -24, -24 )
+enabled = true
+cast_to = Vector2( -8, -8 )
+
+[node name="States" type="Node" parent="."]
+
+[node name="Standard" type="Node" parent="States"]
+script = ExtResource( 3 )
+
+[node name="LeftRight" type="Node" parent="States"]
+script = ExtResource( 4 )
+
+[node name="Stagger" type="Node" parent="States"]
+
+[node name="Flappy" type="Node" parent="States"]
+script = ExtResource( 5 )
+
+[node name="Timers" type="Node2D" parent="."]
+
+[node name="DieTimer" type="Timer" parent="Timers"]
+one_shot = true
+
+[node name="DieParticles" type="Particles2D" parent="."]
+emitting = false
+one_shot = true
+explosiveness = 0.83
+process_material = SubResource( 2 )
+texture = ExtResource( 6 )
+
+[node name="Target" type="Position2D" parent="."]
+
+[node name="icon" type="Sprite" parent="Target"]
+modulate = Color( 1, 0, 0, 1 )
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 2 )
+
+[connection signal="timeout" from="Timers/DieTimer" to="." method="_on_DieTimer_timeout"]

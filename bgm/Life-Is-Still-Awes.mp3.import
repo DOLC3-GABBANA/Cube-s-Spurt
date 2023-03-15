@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Life-Is-Still-Awes.mp3-e4e97e7fb93d5fba81dda2ec7b4f6646.mp3str"
+
+[deps]
+
+source_file="res://bgm/Life-Is-Still-Awes.mp3"
+dest_files=[ "res://.import/Life-Is-Still-Awes.mp3-e4e97e7fb93d5fba81dda2ec7b4f6646.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

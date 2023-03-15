@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/GOLDEN TBILISI - Texili.mp3-72f39182bdd8094e74020c4320bead67.mp3str"
+
+[deps]
+
+source_file="res://bgm/GOLDEN TBILISI - Texili.mp3"
+dest_files=[ "res://.import/GOLDEN TBILISI - Texili.mp3-72f39182bdd8094e74020c4320bead67.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

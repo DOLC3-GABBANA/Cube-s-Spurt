@@ -1,0 +1,10 @@
+[gd_resource type="DynamicFont" load_steps=2 format=2]
+
+[ext_resource path="res://font/base_font/Lack-Line-Italic.otf" type="DynamicFontData" id=1]
+
+[resource]
+size = 30
+outline_size = 1
+outline_color = Color( 0.145098, 0.721569, 0.0235294, 1 )
+use_filter = true
+font_data = ExtResource( 1 )

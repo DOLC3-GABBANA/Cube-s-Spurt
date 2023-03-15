@@ -1,0 +1,165 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://gfx/clouds/song_icon.png" type="Texture" id=1]
+[ext_resource path="res://theme/Buttons_Font.tres" type="Theme" id=2]
+[ext_resource path="res://gfx/clouds/background_blue.png" type="Texture" id=3]
+[ext_resource path="res://Objects/Menu/OptionsMenu.gd" type="Script" id=4]
+
+[node name="OptionsMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 4 )
+
+[node name="Textures" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Background" type="NinePatchRect" parent="Textures"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 3 )
+region_rect = Rect2( 579.022, 402.656, 365.206, 163.948 )
+
+[node name="ShadowBackButton" type="ColorRect" parent="Textures"]
+margin_left = 864.0
+margin_top = 548.0
+margin_right = 1008.0
+margin_bottom = 587.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="ColorBackButton" type="ColorRect" parent="Textures"]
+margin_left = 866.0
+margin_top = 550.0
+margin_right = 1006.0
+margin_bottom = 585.0
+color = Color( 0.592157, 0.0392157, 0.0392157, 1 )
+
+[node name="Labels" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 2 )
+
+[node name="MenuMusic" type="Label" parent="Labels"]
+margin_left = 590.0
+margin_top = 39.0
+margin_right = 713.0
+margin_bottom = 62.0
+text = "Music in menu"
+
+[node name="GameMusic" type="Label" parent="Labels"]
+margin_left = 590.0
+margin_top = 143.0
+margin_right = 713.0
+margin_bottom = 166.0
+text = "Music in game"
+
+[node name="ChangeMusicMenu" type="Label" parent="Labels"]
+visible = false
+margin_left = 30.0
+margin_top = 137.0
+margin_right = 221.0
+margin_bottom = 160.0
+text = "Change music in menu"
+
+[node name="ChangeMusicGame" type="Label" parent="Labels"]
+visible = false
+margin_left = 262.0
+margin_top = 137.0
+margin_right = 452.0
+margin_bottom = 160.0
+text = "Change music in game"
+
+[node name="Buttons" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 2 )
+
+[node name="MenuMusicScrollBar" type="HScrollBar" parent="Buttons"]
+modulate = Color( 0, 0, 1, 1 )
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -436.0
+margin_top = 67.0
+margin_right = -88.0
+margin_bottom = 98.0
+min_value = -20.0
+max_value = 0.0
+value = -10.0
+
+[node name="GameMusicScrollBar" type="HScrollBar" parent="Buttons"]
+modulate = Color( 0, 0, 1, 1 )
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -436.0
+margin_top = 171.0
+margin_right = -88.0
+margin_bottom = 202.0
+min_value = -25.0
+max_value = -5.0
+value = -15.0
+
+[node name="MenuMusicCheckButton" type="CheckButton" parent="Buttons"]
+margin_left = 718.0
+margin_top = 28.0
+margin_right = 794.0
+margin_bottom = 68.0
+pressed = true
+
+[node name="GameMusicCheckButton" type="CheckButton" parent="Buttons"]
+margin_left = 718.0
+margin_top = 133.0
+margin_right = 794.0
+margin_bottom = 173.0
+pressed = true
+
+[node name="ChangeSongMenuButton1" type="Button" parent="Buttons"]
+visible = false
+margin_left = 48.0
+margin_top = 196.0
+margin_right = 193.0
+margin_bottom = 247.0
+text = "Song 1"
+icon = ExtResource( 1 )
+flat = true
+
+[node name="ChangeSongMenuButton2" type="Button" parent="Buttons"]
+visible = false
+margin_left = 48.0
+margin_top = 263.0
+margin_right = 193.0
+margin_bottom = 314.0
+text = "Song 2"
+icon = ExtResource( 1 )
+flat = true
+
+[node name="ChangeSongGameButton1" type="Button" parent="Buttons"]
+visible = false
+margin_left = 280.0
+margin_top = 196.0
+margin_right = 425.0
+margin_bottom = 247.0
+text = "Song 1"
+icon = ExtResource( 1 )
+flat = true
+
+[node name="ChangeSongGameButton2" type="Button" parent="Buttons"]
+visible = false
+margin_left = 280.0
+margin_top = 263.0
+margin_right = 425.0
+margin_bottom = 314.0
+text = "Song 2"
+icon = ExtResource( 1 )
+flat = true
+
+[node name="Back" type="Button" parent="Buttons"]
+margin_left = 866.0
+margin_top = 550.0
+margin_right = 1006.0
+margin_bottom = 585.0
+text = "Save and Back"
+flat = true
+
+[connection signal="value_changed" from="Buttons/MenuMusicScrollBar" to="." method="_on_MenuMusicScrollBar_value_changed"]
+[connection signal="value_changed" from="Buttons/GameMusicScrollBar" to="." method="_on_GameMusicScrollBar_value_changed"]
+[connection signal="pressed" from="Buttons/Back" to="." method="_on_Back_pressed"]

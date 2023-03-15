@@ -1,0 +1,202 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://theme/Pause_Buttons_Theme.tres" type="Theme" id=1]
+[ext_resource path="res://Objects/Menu/PauseMenu.gd" type="Script" id=2]
+[ext_resource path="res://theme/Pause_Theme.tres" type="Theme" id=3]
+
+[node name="PauseMenu" type="Control"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.00333
+script = ExtResource( 2 )
+
+[node name="Background" type="ColorRect" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -512.0
+margin_top = -300.0
+margin_right = 512.0
+margin_bottom = 300.0
+color = Color( 0, 0, 0, 0.4 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -44.0
+margin_top = -121.999
+margin_right = 61.0
+margin_bottom = -84.999
+theme = ExtResource( 3 )
+text = "PAUSE"
+
+[node name="Control" type="Control" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -61.0
+margin_top = -59.0
+margin_right = 78.0
+margin_bottom = 143.0
+
+[node name="ShadowResumeButton" type="ColorRect" parent="Control"]
+anchor_right = 0.995238
+anchor_bottom = 0.119777
+margin_bottom = -8.2016e-05
+color = Color( 0.117647, 0.701961, 0.0156863, 1 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="ColorResumeButton" type="ColorRect" parent="Control"]
+anchor_left = 0.00952381
+anchor_top = 0.00557103
+anchor_right = 0.985714
+anchor_bottom = 0.114206
+margin_top = -1.3113e-06
+margin_bottom = -1.90735e-06
+color = Color( 0.0117647, 0.0235294, 0.376471, 1 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="ShadowRestartButton2" type="ColorRect" parent="Control"]
+anchor_top = 0.21727
+anchor_right = 0.995238
+anchor_bottom = 0.337047
+margin_top = -4.95911e-05
+margin_bottom = -0.000175476
+color = Color( 0.117647, 0.701961, 0.0156863, 1 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="ColorRestartButton" type="ColorRect" parent="Control"]
+anchor_left = 0.00952381
+anchor_top = 0.222841
+anchor_right = 0.985714
+anchor_bottom = 0.331476
+margin_top = -4.95911e-05
+margin_bottom = 9.91821e-05
+color = Color( 0.0117647, 0.0235294, 0.376471, 1 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="ShadowMainMenuButton3" type="ColorRect" parent="Control"]
+anchor_top = 0.43454
+anchor_right = 0.995238
+anchor_bottom = 0.554318
+margin_top = -9.91821e-05
+margin_bottom = -4.57764e-05
+color = Color( 0.117647, 0.701961, 0.0156863, 1 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="ColorMainMenuButton" type="ColorRect" parent="Control"]
+anchor_left = 0.00952381
+anchor_top = 0.440111
+anchor_right = 0.985714
+anchor_bottom = 0.548747
+margin_top = -9.91821e-05
+margin_bottom = 1.52588e-05
+color = Color( 0.0117647, 0.0235294, 0.376471, 1 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="ShadowQuiteButton5" type="ColorRect" parent="Control"]
+anchor_top = 0.637028
+anchor_right = 0.995238
+anchor_bottom = 0.756805
+margin_top = -0.000213623
+margin_bottom = -0.000213623
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="ColorQuiteButton" type="ColorRect" parent="Control"]
+anchor_left = 0.00952381
+anchor_top = 0.642599
+anchor_right = 0.985714
+anchor_bottom = 0.751234
+margin_top = -0.000198364
+margin_bottom = -0.000198364
+color = Color( 0.592157, 0.0392157, 0.0392157, 1 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Buttons" type="Control" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -63.0
+margin_top = -64.0
+margin_right = 83.0
+margin_bottom = 140.0
+theme = ExtResource( 1 )
+
+[node name="Resume" type="Button" parent="Buttons"]
+anchor_left = 0.0300926
+anchor_top = 0.0194444
+anchor_right = 0.969907
+anchor_bottom = 0.0972222
+margin_top = -5.00679e-06
+margin_bottom = 10.1334
+text = "RESUME"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Restart" type="Button" parent="Buttons"]
+anchor_top = 0.23743
+anchor_right = 1.0
+anchor_bottom = 0.315642
+margin_top = -5.34058e-05
+margin_bottom = 10.0447
+text = "RESTART"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="MainMenu" type="Button" parent="Buttons"]
+anchor_top = 0.455307
+anchor_right = 1.0
+anchor_bottom = 0.53352
+margin_top = -0.000106812
+margin_bottom = 10.0445
+text = "MAIN MENU"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Qiut" type="Button" parent="Buttons"]
+anchor_top = 0.658561
+anchor_right = 1.0
+anchor_bottom = 0.736773
+margin_top = -0.000198364
+margin_bottom = 10.0446
+text = "QUIT THE GAME"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[connection signal="pressed" from="Buttons/Resume" to="." method="_on_Resume_pressed"]
+[connection signal="pressed" from="Buttons/Restart" to="." method="_on_Restart_pressed"]
+[connection signal="pressed" from="Buttons/MainMenu" to="." method="_on_MainMenu_pressed"]
+[connection signal="pressed" from="Buttons/Qiut" to="." method="_on_Qiut_pressed"]

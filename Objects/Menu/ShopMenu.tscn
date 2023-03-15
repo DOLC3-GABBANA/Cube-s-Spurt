@@ -1,0 +1,246 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://gfx/clouds/background_blue.png" type="Texture" id=1]
+[ext_resource path="res://theme/Buttons_Font.tres" type="Theme" id=2]
+[ext_resource path="res://Objects/Menu/ShopMenu.gd" type="Script" id=3]
+[ext_resource path="res://gfx/icons/icon_3.png" type="Texture" id=4]
+[ext_resource path="res://gfx/icons/icon_1.png" type="Texture" id=5]
+[ext_resource path="res://gfx/icons/icon_2.png" type="Texture" id=6]
+[ext_resource path="res://gfx/crystal.png" type="Texture" id=7]
+[ext_resource path="res://theme/Attemt_Theme.tres" type="Theme" id=8]
+[ext_resource path="res://gfx/clouds/Screenshot_2.png" type="Texture" id=9]
+
+[node name="ShopMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Texture" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Background" type="NinePatchRect" parent="Texture"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 1 )
+region_rect = Rect2( 414.295, 540.008, 552.172, 195.47 )
+
+[node name="ShadowBackButton" type="ColorRect" parent="Texture"]
+margin_left = 864.0
+margin_top = 548.0
+margin_right = 1008.0
+margin_bottom = 587.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="ColorBackButton" type="ColorRect" parent="Texture"]
+margin_left = 866.0
+margin_top = 550.0
+margin_right = 1006.0
+margin_bottom = 585.0
+color = Color( 0.592157, 0.0392157, 0.0392157, 1 )
+
+[node name="Sprite" type="Sprite" parent="Texture"]
+position = Vector2( 951, 39 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 7 )
+
+[node name="Buttons" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( -386, -124 )
+theme = ExtResource( 2 )
+
+[node name="Lables" type="Control" parent="Buttons"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 212.0
+margin_top = 176.0
+margin_right = -589.0
+margin_bottom = -35.0
+
+[node name="LabelHero" type="Label" parent="Buttons/Lables"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -84.0
+margin_top = -53.0
+margin_right = -168.0
+margin_bottom = -419.0
+text = "BUY THE HEROES"
+
+[node name="LabelBackground" type="Label" parent="Buttons/Lables"]
+margin_left = 526.0
+margin_top = -53.0
+margin_right = 707.0
+margin_bottom = -30.0
+text = "BUY THE BACKGROUND"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Label1" type="Label" parent="Buttons/Lables"]
+margin_left = -156.0
+margin_top = 16.0
+margin_right = 127.0
+margin_bottom = 39.0
+text = "FOR OPEN             YOU NEED 5"
+
+[node name="Sprite1" type="Sprite" parent="Buttons/Lables"]
+position = Vector2( 118.75, 26.25 )
+scale = Vector2( 0.381429, 0.407143 )
+texture = ExtResource( 7 )
+
+[node name="Label2" type="Label" parent="Buttons/Lables"]
+margin_left = -156.0
+margin_top = 106.0
+margin_right = 127.0
+margin_bottom = 129.0
+text = "FOR OPEN             YOU NEED 10"
+
+[node name="Sprite2" type="Sprite" parent="Buttons/Lables"]
+position = Vector2( 127.75, 117.25 )
+scale = Vector2( 0.381429, 0.407143 )
+texture = ExtResource( 7 )
+
+[node name="Label3" type="Label" parent="Buttons/Lables"]
+margin_left = -156.0
+margin_top = 192.0
+margin_right = 127.0
+margin_bottom = 215.0
+text = "FOR OPEN             YOU NEED 20"
+
+[node name="Sprite3" type="Sprite" parent="Buttons/Lables"]
+position = Vector2( 128.75, 202.25 )
+scale = Vector2( 0.381429, 0.407143 )
+texture = ExtResource( 7 )
+
+[node name="Label4" type="Label" parent="Buttons/Lables"]
+margin_left = 516.0
+margin_top = 216.0
+margin_right = 706.0
+margin_bottom = 239.0
+text = "FOR OPEN YOU NEED 50"
+
+[node name="Sprite4" type="Sprite" parent="Buttons/Lables"]
+position = Vector2( 717.75, 226.25 )
+scale = Vector2( 0.381429, 0.407143 )
+texture = ExtResource( 7 )
+
+[node name="ButtonsBuyHero" type="Control" parent="Buttons"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -5.0
+margin_top = 51.0
+margin_right = -631.0
+margin_bottom = 51.0
+
+[node name="Hero1" type="Button" parent="Buttons/ButtonsBuyHero"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -55.0
+margin_top = -179.0
+margin_right = 97.0
+margin_bottom = -109.0
+disabled = true
+icon = ExtResource( 4 )
+flat = true
+
+[node name="Hero2" type="Button" parent="Buttons/ButtonsBuyHero"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -55.0
+margin_top = -91.0
+margin_right = 98.0
+margin_bottom = -21.0
+disabled = true
+icon = ExtResource( 6 )
+flat = true
+
+[node name="Hero3" type="Button" parent="Buttons/ButtonsBuyHero"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -54.0
+margin_top = -6.0
+margin_right = 99.0
+margin_bottom = 64.0
+disabled = true
+icon = ExtResource( 5 )
+flat = true
+
+[node name="ButtonsBuyBackgrounds" type="Control" parent="Buttons"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 628.0
+margin_top = 104.0
+margin_bottom = -57.0
+
+[node name="Background1" type="Button" parent="Buttons/ButtonsBuyBackgrounds"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -121.0
+margin_top = -138.5
+margin_right = 131.0
+margin_bottom = 57.5
+disabled = true
+icon = ExtResource( 9 )
+flat = true
+
+[node name="TextureBackground2" type="NinePatchRect" parent="Buttons/ButtonsBuyBackgrounds"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -97.0
+margin_top = 118.5
+margin_right = 127.0
+margin_bottom = 185.5
+texture = ExtResource( 1 )
+region_rect = Rect2( 133.407, 490.508, 225.368, 83.1941 )
+patch_margin_top = 1
+
+[node name="Background2" type="Button" parent="Buttons/ButtonsBuyBackgrounds"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -91.0
+margin_top = 123.5
+margin_right = 121.0
+margin_bottom = 180.5
+text = "Default Background"
+flat = true
+
+[node name="Back" type="Button" parent="Buttons"]
+margin_left = 867.0
+margin_top = 549.0
+margin_right = 1007.0
+margin_bottom = 584.0
+text = "Save and Back"
+flat = true
+
+[node name="Coins" type="Label" parent="."]
+margin_left = 973.0
+margin_top = 32.0
+margin_right = 982.0
+margin_bottom = 52.0
+theme = ExtResource( 8 )
+text = "0"
+
+[connection signal="pressed" from="Buttons/ButtonsBuyHero/Hero1" to="." method="_on_Hero3_pressed"]
+[connection signal="pressed" from="Buttons/ButtonsBuyHero/Hero2" to="." method="_on_Hero2_pressed"]
+[connection signal="pressed" from="Buttons/ButtonsBuyHero/Hero3" to="." method="_on_Hero1_pressed"]
+[connection signal="pressed" from="Buttons/ButtonsBuyBackgrounds/Background1" to="." method="_on_Background1_pressed"]
+[connection signal="pressed" from="Buttons/ButtonsBuyBackgrounds/Background2" to="." method="_on_Background2_pressed"]
+[connection signal="pressed" from="Buttons/Back" to="." method="_on_Back_pressed"]

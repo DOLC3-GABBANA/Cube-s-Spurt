@@ -1,0 +1,435 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://gfx/clouds/background_blue.png" type="Texture" id=1]
+[ext_resource path="res://Objects/Menu/MainMenu.gd" type="Script" id=2]
+[ext_resource path="res://gfx/clouds/mainMenuBackground.webm" type="VideoStream" id=3]
+[ext_resource path="res://bgm/menuMusic.mp3" type="AudioStream" id=4]
+[ext_resource path="res://theme/Buttons_Font.tres" type="Theme" id=5]
+[ext_resource path="res://theme/Info_Theme.tres" type="Theme" id=6]
+[ext_resource path="res://theme/Logo_Theme.tres" type="Theme" id=7]
+[ext_resource path="res://gfx/clouds/Logo.png" type="Texture" id=8]
+[ext_resource path="res://gfx/clouds/account_icon.png" type="Texture" id=9]
+[ext_resource path="res://gfx/clouds/warnning.png" type="Texture" id=10]
+[ext_resource path="res://theme/Attemt_Theme.tres" type="Theme" id=11]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends VideoPlayer
+
+func _ready():
+	pass
+
+func _on_BackgroundVideoPlayer_finished():
+	play()
+"
+
+[node name="MainMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="BackgroundVideoPlayer" type="VideoPlayer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+stream = ExtResource( 3 )
+autoplay = true
+buffering_msec = 10
+script = SubResource( 1 )
+
+[node name="Textures" type="Control" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -100.5
+margin_top = -149.0
+margin_right = 100.5
+margin_bottom = 181.0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Textures"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -96.5
+margin_top = -161.5
+margin_right = 95.5
+margin_bottom = -106.5
+texture = ExtResource( 1 )
+region_rect = Rect2( 133.407, 490.508, 225.368, 83.1941 )
+patch_margin_top = 1
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="Textures"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -96.5
+margin_top = -73.5
+margin_right = 95.5
+margin_bottom = -18.5
+texture = ExtResource( 1 )
+region_rect = Rect2( 133.407, 490.508, 225.368, 83.1941 )
+patch_margin_top = 1
+
+[node name="NinePatchRect3" type="NinePatchRect" parent="Textures"]
+anchor_left = 0.0199005
+anchor_top = 0.543939
+anchor_right = 0.975124
+anchor_bottom = 0.710606
+texture = ExtResource( 1 )
+region_rect = Rect2( 133.407, 490.508, 225.368, 83.1941 )
+patch_margin_top = 1
+
+[node name="NinePatchRect4" type="NinePatchRect" parent="Textures"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -96.5
+margin_top = 102.5
+margin_right = 95.5
+margin_bottom = 157.5
+texture = ExtResource( 1 )
+region_rect = Rect2( 133.407, 490.508, 225.368, 83.1941 )
+patch_margin_top = 1
+
+[node name="ShadowButtonAccount" type="ColorRect" parent="Textures"]
+margin_left = -133.0
+margin_top = 5.0
+margin_right = -67.0
+margin_bottom = 71.0
+color = Color( 0, 0.64, 0.91, 0.75 )
+
+[node name="ColorButtonAccount" type="ColorRect" parent="Textures"]
+margin_left = -130.0
+margin_top = 8.0
+margin_right = -70.0
+margin_bottom = 68.0
+color = Color( 0.02, 0.01, 0.68, 0.75 )
+
+[node name="Buttons" type="Control" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -104.0
+margin_top = -155.0
+margin_right = 104.0
+margin_bottom = 187.0
+theme = ExtResource( 5 )
+
+[node name="ButtonPlay" type="Button" parent="Buttons"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -90.0
+margin_top = -158.5
+margin_right = 92.0
+margin_bottom = -111.5
+text = "PLAY"
+flat = true
+
+[node name="ButtonShop" type="Button" parent="Buttons"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -90.0
+margin_top = -70.5
+margin_right = 92.0
+margin_bottom = -23.5
+text = "SHOP"
+flat = true
+
+[node name="ButtonOptions" type="Button" parent="Buttons"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -90.0
+margin_top = 17.5
+margin_right = 92.0
+margin_bottom = 64.5
+text = "OPTIONS"
+flat = true
+
+[node name="ButtonQuit" type="Button" parent="Buttons"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -90.0
+margin_top = 105.5
+margin_right = 92.0
+margin_bottom = 152.5
+text = "QUIT"
+flat = true
+
+[node name="ButtonAccount" type="Button" parent="Buttons"]
+margin_left = -136.0
+margin_top = 5.0
+margin_right = -56.0
+margin_bottom = 85.0
+rect_min_size = Vector2( 80, 80 )
+flat = true
+
+[node name="Sprite" type="Sprite" parent="Buttons/ButtonAccount"]
+position = Vector2( 40, 39 )
+scale = Vector2( 0.15, 0.15 )
+texture = ExtResource( 9 )
+
+[node name="Logo" type="Control" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -170.0
+margin_top = 58.0
+margin_right = 205.0
+margin_bottom = 127.0
+
+[node name="Label" type="Label" parent="Logo"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 3.0
+margin_top = -12.5
+margin_right = 275.0
+margin_bottom = 16.5
+theme = ExtResource( 7 )
+text = "CUBE'S SPURT"
+
+[node name="Sprite" type="Sprite" parent="Logo"]
+position = Vector2( 327, 34 )
+scale = Vector2( 0.66, 0.6 )
+texture = ExtResource( 8 )
+
+[node name="About" type="Control" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -405.0
+margin_top = -47.0
+margin_right = 425.0
+margin_bottom = -3.0
+theme = ExtResource( 6 )
+
+[node name="Company" type="Label" parent="About"]
+margin_left = 12.0
+margin_top = 1.0
+margin_right = 740.0
+margin_bottom = 26.0
+text = "GENERATION OF DREAMERS COMPANY | PROJECT MANAGER AND LEADER OF PROJECT: VLADISLAV BRUY"
+
+[node name="Version" type="Label" parent="About"]
+margin_left = 12.0
+margin_top = 22.0
+margin_right = 104.0
+margin_bottom = 44.0
+text = "Version: 1.0.0"
+
+[node name="Contacts" type="Label" parent="About"]
+margin_left = 283.0
+margin_top = 22.0
+margin_right = 823.0
+margin_bottom = 44.0
+text = "CONTACTS: MOBILE - +380977103209 OR INSTARGAM - @vlad0s_4ramzes"
+
+[node name="AboutAccounts" type="Control" parent="."]
+anchor_left = 0.648
+anchor_top = 0.255
+anchor_right = 0.967
+anchor_bottom = 0.785
+margin_left = 0.447998
+margin_top = -1.52588e-05
+margin_right = -0.208069
+margin_bottom = -3.05176e-05
+theme = ExtResource( 11 )
+
+[node name="CurrentAccount" type="Label" parent="AboutAccounts"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -1.0
+margin_top = 6.0
+margin_right = -174.0
+margin_bottom = -292.0
+text = "Current account: ---"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="AllTime" type="Label" parent="AboutAccounts"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 38.0
+margin_right = -180.0
+margin_bottom = -260.0
+text = "Your game time: ---"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="ChangeAccount" type="Popup" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -283.5
+margin_top = -160.0
+margin_right = 283.5
+margin_bottom = 190.0
+theme = ExtResource( 5 )
+
+[node name="ShadowButtonAccount" type="ColorRect" parent="ChangeAccount"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0.639216, 0.909804, 1 )
+
+[node name="ColorButtonAccount" type="ColorRect" parent="ChangeAccount"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 6.0
+margin_top = 7.0
+margin_right = -7.0
+margin_bottom = -6.0
+color = Color( 0.0235294, 0.00784314, 0.682353, 1 )
+
+[node name="EnterLogin" type="LineEdit" parent="ChangeAccount"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -150.0
+margin_top = -64.5
+margin_right = 150.0
+margin_bottom = -31.5
+focus_mode = 1
+mouse_filter = 1
+clear_button_enabled = true
+
+[node name="EnterPassword" type="LineEdit" parent="ChangeAccount"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -150.0
+margin_top = 7.5
+margin_right = 150.0
+margin_bottom = 40.5
+secret = true
+secret_character = "."
+clear_button_enabled = true
+
+[node name="Label" type="Label" parent="ChangeAccount"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -102.5
+margin_top = 40.0
+margin_right = 102.5
+margin_bottom = 63.0
+text = "Registration and login"
+
+[node name="LabelLogin" type="Label" parent="ChangeAccount"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -147.5
+margin_top = 80.0
+margin_right = 57.5
+margin_bottom = 103.0
+text = "Enter your login:"
+
+[node name="LabelPassword" type="Label" parent="ChangeAccount"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -147.5
+margin_top = 160.0
+margin_right = 57.5
+margin_bottom = 183.0
+text = "Enter your password:"
+
+[node name="ButtonRegister" type="Button" parent="ChangeAccount"]
+margin_left = 124.5
+margin_top = 241.0
+margin_right = 210.5
+margin_bottom = 272.0
+text = "Register"
+
+[node name="ButtonLogin" type="Button" parent="ChangeAccount"]
+margin_left = 362.5
+margin_top = 241.0
+margin_right = 442.5
+margin_bottom = 272.0
+text = "Login"
+
+[node name="Back" type="Button" parent="ChangeAccount"]
+margin_left = 492.5
+margin_top = 300.0
+margin_right = 546.5
+margin_bottom = 329.0
+text = "Back"
+
+[node name="Warnning" type="Popup" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -283.0
+margin_top = -151.0
+margin_right = 284.0
+margin_bottom = 175.0
+theme = ExtResource( 5 )
+
+[node name="ShadowButtonAccount2" type="ColorRect" parent="Warnning"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.913725, 0.917647, 0.133333, 1 )
+
+[node name="ColorButtonAccount" type="ColorRect" parent="Warnning"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 6.0
+margin_top = 7.0
+margin_right = -7.0
+margin_bottom = -6.0
+color = Color( 0.129412, 0.12549, 0.141176, 1 )
+
+[node name="TextureRect" type="TextureRect" parent="Warnning"]
+margin_left = 24.0
+margin_top = 72.0
+margin_right = 184.0
+margin_bottom = 232.0
+texture = ExtResource( 10 )
+
+[node name="Label" type="Label" parent="Warnning"]
+margin_left = 192.0
+margin_top = 112.0
+margin_right = 535.0
+margin_bottom = 187.0
+text = "You must login in game for accssesing
+         to Play menu, Shop menu 
+              and Options menu"
+
+[node name="OK" type="Button" parent="Warnning"]
+margin_left = 465.0
+margin_top = 268.0
+margin_right = 514.0
+margin_bottom = 297.0
+text = "OK"
+
+[node name="backgroundMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -15.0
+autoplay = true
+
+[connection signal="finished" from="BackgroundVideoPlayer" to="BackgroundVideoPlayer" method="_on_BackgroundVideoPlayer_finished"]
+[connection signal="pressed" from="Buttons/ButtonPlay" to="." method="_on_ButtonPlay_pressed"]
+[connection signal="pressed" from="Buttons/ButtonShop" to="." method="_on_ButtonShop_pressed"]
+[connection signal="pressed" from="Buttons/ButtonOptions" to="." method="_on_ButtonOptions_pressed"]
+[connection signal="pressed" from="Buttons/ButtonQuit" to="." method="_on_ButtonQuite_pressed"]
+[connection signal="pressed" from="Buttons/ButtonAccount" to="." method="_on_ButtonAccount_pressed"]
+[connection signal="pressed" from="ChangeAccount/ButtonRegister" to="." method="_on_ButtonRegister_pressed"]
+[connection signal="pressed" from="ChangeAccount/ButtonLogin" to="." method="_on_ButtonLogin_pressed"]
+[connection signal="pressed" from="ChangeAccount/Back" to="." method="_on_Back_pressed"]
+[connection signal="pressed" from="Warnning/OK" to="." method="_on_OK_pressed"]

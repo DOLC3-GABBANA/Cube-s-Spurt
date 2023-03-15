@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/ARIA - Bleu Chanel (NA-NO Remix).mp3-00bb33af790595e6c51a5c21b71e469e.mp3str"
+
+[deps]
+
+source_file="res://bgm/ARIA - Bleu Chanel (NA-NO Remix).mp3"
+dest_files=[ "res://.import/ARIA - Bleu Chanel (NA-NO Remix).mp3-00bb33af790595e6c51a5c21b71e469e.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

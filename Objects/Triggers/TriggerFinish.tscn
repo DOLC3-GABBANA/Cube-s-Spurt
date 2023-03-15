@@ -1,0 +1,43 @@
+[gd_scene load_steps=3 format=2]
+
+[sub_resource type="GDScript" id=2]
+script/source = "extends \"res://Objects/Triggers/_TriggerBase.gd\"
+
+func _ready():
+	._ready()
+
+func _on_TriggerFinish_body_entered(body):
+	if body.is_in_group(\"hero\"):
+		get_tree().change_scene(\"res://Objects/Menu/FinishMenuLvl1.tscn\")
+		data_handling.save_data(String(globals.coins), \"coins.dat\")
+		globals.buttonDisable = false
+		data_handling.save_data(int(globals.buttonDisable), \"button_active.dat\")
+	if data_handling.load_data(\"attempt.dat\"):
+		data_handling.save_data(int(data_handling.load_data(\"attempt.dat\")) + 1, \"attempt.dat\")
+	else:
+		data_handling.save_data(globals.level_attempts, \"attempt.dat\")
+	if data_handling.load_data(\"time.dat\"):
+		data_handling.save_data(int(data_handling.load_data(\"time.dat\")) + globals.timer, \"time.dat\")
+	else:
+		data_handling.save_data(int(globals.timer), \"time.dat\")
+"
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 10.5, 48.5 )
+
+[node name="TriggerFinish" type="Area2D"]
+script = SubResource( 2 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 4.0
+margin_top = -28.0
+margin_right = 44.0
+margin_bottom = -14.0
+rect_rotation = -89.9999
+text = "Finish"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 10.5, -48.5 )
+shape = SubResource( 1 )
+
+[connection signal="body_entered" from="." to="." method="_on_TriggerFinish_body_entered"]
